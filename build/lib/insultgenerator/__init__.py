@@ -1,0 +1,1 @@
+from .insultgenerator import insgen
