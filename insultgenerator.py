@@ -3,7 +3,7 @@
 # Catware Insult Generator
 #
 
-from random import random
+from random import choice, randint
 
 insults = "бык,коронавирус,клоун,кукан,танк,вертолёт,велосипед,батя,братик,процессор,мешок,пакет,коврик,коврижка,чебурек,питон,кал,пёс,инцел,виртуалбокс,долбаёб,долбоёб,далбоёб,планктон,мефедрон,снюс,камаз,туалет,толкан,томат,огурец,банан,ебанан,баклан,ваз-2101,линукс,спрей,поносик,ворон,мусор,понос,помой,карась,хуй,таракан,урод,шпорк,баклажан,овощ,фрукт,сахарок,барсик,пупс,неосарт,линуксоид,виндузятник,маковод,туалет,толкан,толчок,пепел,краб,макинтош,дельфин,трюфель,бсдшник,цыган,чмо,пидор,задрот,кисель,ботан,гандонео,пушок,зефир,негативчик,быдлан,третьеклассник,газ,еблан,уёбок,пидорас,гандон,педик,презик,волос,негр,убунтовод,арчегомосек,шоколад,козёл,бычара,козлище,козён,обама,навальнёнок,говноед,трамп,гей,гомосек,свин,кобель,хохол,сатана".split(",")
 adjectives = "ебаный,обоссаный,поднадусёровый,слабонервный,жирный,вонючий,кастрированный,ебучий,невменяемый,блядский,черномазый,оттраханный,обдроченный".split(",")
@@ -22,7 +22,7 @@ relatives = "мать,мамка,бабка,бабушка,дочка,тёща,�
 fem_insults = "шалава,лоханка,макака,обезьяна,шлюха,шаболда,сосалка,дура,молекула,хуйня,грязь,проститутка,пизда,махнатка,дырка,дыра,вонючка,конча,пылинка,хохлинка,корова,бабка,уродина,фиона,пепеляшка,акула,курица".split(",")
 fem_adjectives = "ебаная,обосраная,мёртвая,вообще жива?,обоссаная,поднадусёровая,слабонервная,жирная,вонючая,кастрированная,ебучая,невменяемая,блядская,черномазая,оттраханая,обдроченная,конченая".split(",")
 item_adjectives_fem = "широкая,огромная,мелкая,выебанная,гигантская,обдолбанная".split(",")
-smileys = list("😆🤣😡🤬😈👿👺👹🤡🖕🏻🤘🏻😏🧠")
+smileys = ["😆", "🤣", "😡", "🤬", "😈", "👿", "👺", "👹", "🤡", "🖕", "🤘", "😏", "🧠"]
 
 insult = "Оскорбление не придумал"
 
@@ -44,45 +44,45 @@ def genins():
     way = choice([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21])
     if way == 1:
         insult = f"{choice(demonstrative_verbs)} {choice(places)}, {choice(insults)} {choice(adjectives)}"
-    if way == 2:
+    elif way == 2:
         insult = f"{genlaugh()} {choice(abusives)} ты {choice(insults)} {choice(whose)}{genscob()}"
-    if way == 3:
+    elif way == 3:
         insult = f"пососи мой {choice(dick_adjectives)}{choice(dicks)}, {choice(adjectives)} {choice(whose)}"
-    if way == 4:
+    elif way == 4:
         insult = f"{choice(abusives)} ты {choice(geninsult_first)}{choice(geninsult_second)}"
-    if way == 5:
+    elif way == 5:
         insult = f"{choice(abusives)} ты {choice(geninsult_first)}{choice(geninsult_endings)}"
-    if way == 6:
+    elif way == 6:
         insult = f"{choice(demonstrative_verbs)} {choice(places)}, {choice(fem_insults)} {choice(fem_adjectives)}"
-    if way == 7:
+    elif way == 7:
         insult = f"{genlaugh()} {choice(abusives)} ты {choice(fem_insults)} {choice(whose)}{genscob()}"
-    if way == 8:
+    elif way == 8:
         insult = f"{genlaugh()} {choice(abusives)} у тебя {choice(fem_insults)} {choice(item_adjectives_fem)}"
-    if way == 9:
+    elif way == 9:
         insult = f"{choice(abusives)} ты {choice(geninsult_first)}{choice(geninsult_second)}"
-    if way == 10:
+    elif way == 10:
         insult = f"{choice(abusives)} ты {choice(geninsult_first)}{choice(geninsult_endings)}"
-    if way == 11:
+    elif way == 11:
         insult = f"да я твою {choice(relatives_impad)} {choice(verbs)}{genscob()} понимаешь???{genscob()}"
-    if way == 12:
+    elif way == 12:
         insult = f"я тебе щас {choice(insults)} в рот засуну, {choice(insults)} ты {choice(adjectives)}{genlaugh()}"
-    if way == 13:
+    elif way == 13:
         insult = f"да, твоя {choice(relatives)} {choice(fem_adjectives)}, а вот ты {choice(adjectives)} {choice(insults)}"
-    if way == 14:
+    elif way == 14:
         insult = f"слышь ты {choice(adjectives)} {choice(insults)} я твою {choice(relatives_impad)} {choice(verbs)}"
-    if way == 15:
+    elif way == 15:
         insult = f"судо апт уебать твоя-мама --причина=ты_{choice(abusives)}_{choice(adjectives)}_{choice(insults)}"
-    if way == 16:
+    elif way == 16:
         insult = f"пинг твоя-{choice(relatives)}... а чё не пингуется? а потому что я её {choice(verbs)}"
-    if way == 17:
+    elif way == 17:
         insult = f"ssh твоя{choice(relatives)}@{choice(insults)}... о {choice(abusives)} работает... ахаххахахаха тут пароль я-{choice(insults)}"
-    if way == 18:
+    elif way == 18:
         insult = f"приветик {choice(insults)} {choice(adjectives)} , давно не виделись, как помнишь ты {choice(verbs)} свою {choice(relatives_impad)}. так вот пока ты это делал я твою {choice(relatives_impad)} {choice(verbs)}"
-    if way == 19:
+    elif way == 19:
         insult = f"плавают {choice(insults)} и {choice(insults)}. и тут всплыла твоя {choice(relatives)}. один другого спрашивает: ты {choice(insults)}? а тот ему и отвечает: я твою{choice(relatives_impad)} {choice(verbs)}"
-    if way == 20:
+    elif way == 20:
         insult = f"шёл {choice(insults)} по лесу. видит - {choice(insults)} горит. ну он сел на него и выебал твою {choice(relatives_impad)}"
-    if way == 21:
+    elif way == 21:
         insult = f"ути ути ты мой {choice(insults)} маленький)) а ты знал что я твою ебаную {choice(relatives_impad)} вчера {choice(verbs)}?))"
     insult = insult.upper()
     insult += choice(smileys) * randint(0, 5)
@@ -92,8 +92,9 @@ def genins():
             insult += f" {choice(insults)} {choice(adjectives)} {genlaugh()}".upper()
     return insult
 
-print("Insult-Generator готов к работе. Нажмите Enter чтобы генерировать обзывательства")
-while True:
-    print("=" * 30)
-    print(genins())
-    input()
+if __name__ == '__main__':
+    print("Insult-Generator готов к работе. Нажмите Enter чтобы генерировать обзывательства")
+    while True:
+        print("=" * 30)
+        print(genins())
+        input()
