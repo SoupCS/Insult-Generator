@@ -1,1 +1,1 @@
-from .insultgenerator import insgen
+from .insultgenerator import genins
